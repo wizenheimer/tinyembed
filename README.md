@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TinyEmbed
+
+TinyEmbed lets you create text embeddings, perform semantic searches, and analyze text similarity without any backend server. All processing happens locally, right within your browser.
+
+## Features
+
+- **Single Text Embedding**: Generate embeddings for individual texts
+- **Batch Embedding**: Process multiple texts at once
+- **Semantic Search**: Create a corpus of texts and search by meaning
+- **Similarity Analysis**: Compare two texts and analyze their semantic similarity
+- **Local Processing**: All computation runs in your browser
+- **No API Keys**: No external API services or keys required
+
+## Technical Stack
+
+- **Next.js** with App Router and TypeScript
+- **TinyLM** for embedding generation
+- **shadcn/ui** for components
+- **Tailwind CSS** for styling
+- **WebGPU** (optional) for hardware acceleration
+
+## Browser Requirements
+
+- Modern browser with WebGPU support for full performance (Chrome 113+, Edge 113+, or other Chromium browsers)
+- Falls back to WebGL when WebGPU is unavailable
 
 ## Getting Started
 
-First, run the development server:
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone https://github.com/wizenheimer/tinyembed.git
+cd tinyembed
+
+# Install dependencies
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Start the development server
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Production Build
 
-## Learn More
+```bash
+# Build for production
+npm run build
 
-To learn more about Next.js, take a look at the following resources:
+# Start the production server
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Usage Guide
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 1. Load the Embedding Model
 
-## Deploy on Vercel
+- Select the embedding model from the dropdown (currently only Nomic Embed is supported)
+- Choose the encoding format (Float for raw vectors or Base64 for compact storage)
+- Click "Load Model" and wait for the loading process to complete
+- The status indicators will show you the current state of the model and system
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 2. Generate Embeddings
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### Single Embedding
+
+- Enter text in the input field
+- Click "Generate Embedding"
+- View the resulting embedding vector and metadata
+
+#### Batch Embedding
+
+- Enter multiple texts, one per line
+- Click "Generate Batch Embeddings"
+- View the results for the entire batch
+
+### 3. Semantic Search
+
+- Add documents one by one to create a searchable corpus
+- Enter a search query
+- Click "Search" to find semantically similar documents
+- Results will be ranked by similarity
+
+### 4. Similarity Analysis
+
+- Enter two texts to compare
+- Click "Compare Texts"
+- View the similarity score and interpretation
+
+## Performance Notes
+
+- WebGPU acceleration provides the best performance, especially for larger embedding models
+- Loading models can take some time depending on your internet connection (models are downloaded the first time)
+- Processing times improve significantly after the initial runs
+- For using vector search over HNSW index, try out [tinkerbird](https://github.com/wizenheimer/tinkerbird) library.
+
+## Attribution
+
+This project uses:
+
+- [TinyLM](https://github.com/wizenheimer/tinylm) for browser-based ML inference
+- [Nomic Embed](https://huggingface.co/nomic-ai/nomic-embed-text-v1.5) text embedding model
+- [shadcn/ui](https://ui.shadcn.com/) for UI components
