@@ -1,7 +1,7 @@
 <div align="center">
-  <h1> TinyLM </h1>
+  <h1> TinyEmbed </h1>
   <p>
-    <a href="https://github.com/wizenheimer/tinylm"><strong>Powered By TinyLM »</strong></a>
+    <a href="https://github.com/wizenheimer/tinylm"><strong>Learn More »</strong></a>
   </p>
 </div>
 
