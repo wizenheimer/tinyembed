@@ -1,4 +1,11 @@
-# TinyEmbed
+<div align="center">
+  <h1> TinyLM </h1>
+  <p>
+    <a href="https://github.com/wizenheimer/tinylm"><strong>Powered By TinyLM »</strong></a>
+  </p>
+</div>
+
+![Overview](assets/screenshot.png)
 
 TinyEmbed lets you create text embeddings, perform semantic searches, and analyze text similarity without any backend server. All processing happens locally, right within your browser.
 
