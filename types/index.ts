@@ -20,7 +20,7 @@ export type Progress = {
   type: string;
   percentComplete: number;
   message: string;
-  files?: string[];
+  files?: ProgressFile[];
   overall?: {
     bytesLoaded: number;
     bytesTotal: number;

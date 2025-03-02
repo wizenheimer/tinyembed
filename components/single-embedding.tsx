@@ -12,6 +12,7 @@ export function SingleEmbedding({
   onGenerateEmbedding,
   result,
   isGenerating,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   encodingFormat
 }: SingleEmbeddingProps) {
   const [text, setText] = useState("");

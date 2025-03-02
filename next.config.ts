@@ -9,7 +9,10 @@ const nextConfig: NextConfig = {
       asyncWebAssembly: true,
       layers: true,
     };
-    
+
+    // Disable webpack cache to prevent 'Unable to snapshot resolve dependencies' warnings
+    config.cache = false;
+
     return config;
   },
 };

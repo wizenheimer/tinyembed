@@ -12,6 +12,7 @@ export function BatchEmbedding({
   onGenerateBatchEmbeddings,
   result,
   isGenerating,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   encodingFormat
 }: BatchEmbeddingProps) {
   const [text, setText] = useState("");
